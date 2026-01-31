@@ -3,71 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prodesk IT | Digital Agency</title>
+  <title>Cash-Flow | Salary & Expense Tracker</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">Prodesk IT</div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="nav-menu" id="navMenu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    </nav>
+    <div class="logo">Cash-Flow</div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
   </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>We Build Digital Experiences</h1>
-      <p class="hero-subtitle">Helping brands grow online with design & technology. Transform your digital presence with our expert team.</p>
-      <button class="cta">Get Started</button>
-    </div>
-  </section>
+  <main class="dashboard">
+    <h1 class="dashboard-title">Salary & Expense Tracker</h1>
 
-  <!-- Services -->
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="card">
-        <div class="card-icon">🔍</div>
-        <h3>SEO Optimization</h3>
-        <p>Boost your search engine rankings and drive organic traffic to your website with our proven SEO strategies.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">💻</div>
-        <h3>Web Development</h3>
-        <p>Create stunning, responsive websites that work seamlessly across all devices and platforms.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📈</div>
-        <h3>Digital Marketing</h3>
-        <p>Reach your target audience and grow your business with data-driven digital marketing campaigns.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Form -->
+    <section class="form-section card">
+      <h2>Enter your data</h2>
+      <form id="cashFlowForm">
+        <div class="form-group">
+          <label for="totalSalary">Total Salary</label>
+          <input type="number" id="totalSalary" name="totalSalary" min="0" step="0.01" placeholder="e.g. 50000" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="expenseName">Expense Name</label>
+            <input type="text" id="expenseName" name="expenseName" placeholder="e.g. Rent" />
+          </div>
+          <div class="form-group">
+            <label for="expenseAmount">Expense Amount</label>
+            <input type="number" id="expenseAmount" name="expenseAmount" min="0" step="0.01" placeholder="e.g. 15000" />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Expense</button>
+      </form>
+    </section>
 
-  <!-- Footer -->
-  <footer id="contact">
-    <div class="footer-content">
-      <p>© 2026 Prodesk IT. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook" class="social-icon">📘</a>
-        <a href="#" aria-label="Twitter" class="social-icon">🐦</a>
-        <a href="#" aria-label="LinkedIn" class="social-icon">💼</a>
-        <a href="#" aria-label="Instagram" class="social-icon">📷</a>
+    <!-- Summary -->
+    <section class="summary-section">
+      <div class="summary-card">
+        <span class="summary-label">Total Salary</span>
+        <span id="displaySalary" class="summary-value">0</span>
       </div>
-    </div>
-  </footer>
+      <div class="summary-card">
+        <span class="summary-label">Total Expenses</span>
+        <span id="displayExpenses" class="summary-value">0</span>
+      </div>
+      <div class="summary-card highlight">
+        <span class="summary-label">Remaining Balance</span>
+        <span id="displayBalance" class="summary-value">0</span>
+      </div>
+    </section>
+
+    <!-- Expense List -->
+    <section class="expenses-section card">
+      <h2>Expense List</h2>
+      <ul id="expenseList" class="expense-list"></ul>
+      <p id="emptyMessage" class="empty-message">No expenses yet. Add one above.</p>
+    </section>
+
+    <!-- Pie Chart -->
+    <section class="chart-section card">
+      <h2>Remaining Balance vs Total Expenses</h2>
+      <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+      </div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
