@@ -4,11 +4,14 @@ A functional dashboard where you can enter your salary, add expenses, and see th
 
 ## Live Demo
 
-[Add your Vercel/Netlify deployment URL here]
+https://prodesk-assignment-2.vercel.app/
 
 ## Screenshot
 
-[Add a screenshot of the Cash-Flow dashboard here]
+<img width="1913" height="908" alt="image" src="https://github.com/user-attachments/assets/ad6748d7-c6cc-40c3-b61e-f02f8f46b850" />
+<img width="1918" height="918" alt="image" src="https://github.com/user-attachments/assets/fb2383ec-d93f-48c5-82eb-b6b060cb8912" />
+
+
 
 ---
 
@@ -61,19 +64,6 @@ A functional dashboard where you can enter your salary, add expenses, and see th
 
 ---
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone [your-repo-url]
-   cd [project-folder]
-   ```
-
-2. Open `index.html` in a web browser.
-
-No build step or server required. Chart.js is loaded via CDN in `index.html`.
-
----
 
 ## How to Use
 
@@ -96,9 +86,10 @@ No build step or server required. Chart.js is loaded via CDN in `index.html`.
 
 ## Author
 
-[Your Name]
+Tanish Gupta
 
 ## License
 
 This project was created for educational purposes as part of the Prodesk IT internship program (Week 2 – Cash-Flow Assignment).
 #
+
